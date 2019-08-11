@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useComponentRegistry } from '@bem-react/di';
+// import { Container } from './blocks/Container/Container';
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
+  const { Datepicker } = useComponentRegistry('app');
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,17 +14,9 @@ const App: React.FC = () => {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Datepicker />
+        {/* <Container /> */}
       </header>
     </div>
   );
 }
-
-export default App;

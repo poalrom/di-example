@@ -5,6 +5,4 @@ import { App } from './App';
 import { registryContext } from '@bem-react/di';
 import { registry } from './registry@mobile';
 
-const RegistryContext = registryContext;
-
-ReactDOM.render(<RegistryContext.Provider value={{app: registry}}><App /></RegistryContext.Provider>, document.getElementById('root'));
+ReactDOM.render(<registryContext.Provider value={{app: registry}}><App /></registryContext.Provider>, document.getElementById('root'));
