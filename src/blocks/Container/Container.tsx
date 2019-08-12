@@ -1,17 +1,12 @@
 import React from "react";
-import { registryContext } from "@bem-react/di";
+import { DatepickerMobile } from '../Datepicker/Datepicker@mobile';
+import { DatepickerDesktop } from '../Datepicker/Datepicker@desktop';
 
 class Container extends React.PureComponent<{}> {
     render() {
-        return (
-            <registryContext.Consumer>
-                {({ app }) => {
-                    const Datepicker = app.get('Datepicker');
-
-                    return <Datepicker />
-                }}
-            </registryContext.Consumer>
-        )
+        return process.env.PLATFORM === 'mobile'?
+            <DatepickerMobile /> :
+            <DatepickerDesktop />
     }
 }
 

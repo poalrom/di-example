@@ -1,11 +1,11 @@
 import React from "react";
 
-import { DatepickerType, IDatepicker } from './Datepicker';
+import { IDatepickerProps } from './Datepicker';
 
-class DatepickerMobile extends React.PureComponent<{}> implements IDatepicker {
+class DatepickerMobile extends React.PureComponent<IDatepickerProps> {
     render() {
         return <input type="date" />;
     }
 }
 
-export { DatepickerType, DatepickerMobile };
+export { DatepickerMobile };
